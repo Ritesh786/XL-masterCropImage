@@ -28,18 +28,27 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/orange"
+        android:background="#ffff"
         android:id="@+id/toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:titleTextColor="@color/black">
 
+
         <ImageView
             android:id="@+id/searchimage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp"
             android:src="@drawable/searchicon" />
+
+        <ImageView
+            android:id="@+id/excellogo"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="150dp"
+            android:src="@drawable/exceldainik" />
 
     </android.support.v7.widget.Toolbar>
 

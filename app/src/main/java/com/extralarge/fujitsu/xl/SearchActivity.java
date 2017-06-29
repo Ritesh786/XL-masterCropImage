@@ -1,6 +1,7 @@
 package com.extralarge.fujitsu.xl;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -20,8 +21,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.extralarge.fujitsu.xl.NewsSection.RecyclerTouchListener;
 import com.extralarge.fujitsu.xl.ReporterSection.AppController;
 import com.extralarge.fujitsu.xl.ReporterSection.Movie;
+import com.extralarge.fujitsu.xl.ReporterSection.NewsDetailShow;
 import com.extralarge.fujitsu.xl.ReporterSection.PendingNews;
 import com.extralarge.fujitsu.xl.ReporterSection.RecycleAdapter;
 
@@ -73,7 +76,22 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerTouchListener(getApplicationContext(), new RecyclerTouchListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
 
+                        Movie mo123 = movieList.get(position);
+
+                        Intent newsdetailintnt = new Intent(getApplicationContext(),NewsDetailShow.class);
+                        newsdetailintnt.putExtra("type",mo123.getYear());
+                        newsdetailintnt.putExtra("headline",mo123.getTitle());
+                        newsdetailintnt.putExtra("content",mo123.getRating());
+                        newsdetailintnt.putExtra("image",mo123.getThumbnailUrl());
+                        startActivity(newsdetailintnt);
+                        // TODO Handle item click
+                    }
+                })
+        );
 
     }
 

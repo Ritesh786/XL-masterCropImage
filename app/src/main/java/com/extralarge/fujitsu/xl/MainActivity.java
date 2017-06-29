@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
          */
 
         final android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("EXCEL");
         toolbar.setTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.black));
 
         ImageView msearch = (ImageView) toolbar.findViewById(R.id.searchimage);

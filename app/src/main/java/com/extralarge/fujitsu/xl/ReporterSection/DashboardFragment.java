@@ -281,7 +281,7 @@ try {
 
             AlertDialog.Builder mbuilder = new AlertDialog.Builder(getContext());
             View mview =getActivity().getLayoutInflater().inflate(R.layout.chooseimage, null);
-            TextView mtakephoto = (TextView) mview.findViewById(R.id.imagebycamera);
+            Button mtakephoto = (Button) mview.findViewById(R.id.imagebycamera);
             mtakephoto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -292,7 +292,7 @@ try {
                 }
             });
 
-            TextView mtakegallery = (TextView) mview.findViewById(R.id.imagebygallery);
+            Button mtakegallery = (Button) mview.findViewById(R.id.imagebygallery);
             mtakegallery.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

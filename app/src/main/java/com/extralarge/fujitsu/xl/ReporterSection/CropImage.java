@@ -69,6 +69,7 @@ else {
     }
 
     public void cropImage(Bitmap bitmap)
+
     {
          cropped = cropImageView.getCroppedImage();
            String bitimage = getStringImage(cropped);
