@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "776126271299",
+    "firebase_url": "https://xlfirebaseproject.firebaseio.com",
+    "project_id": "xlfirebaseproject",
+    "storage_bucket": "xlfirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776126271299:android:3387b8a9df500f66",
+        "android_client_info": {
+          "package_name": "com.extralarge.fujitsu.xl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776126271299-e80q7oiit6af5oj5s8uk47577imjj794.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.extralarge.fujitsu.xl",
+            "certificate_hash": "a5602a8c456af1aefe19b7ec94b70d4e199249c2"
+          }
+        },
+        {
+          "client_id": "776126271299-p2q7tjkich8e05a153jrt37qh2a1jdsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsVSAuB_vMGs5dv06zHaN2mr936l5fzg8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776126271299-p2q7tjkich8e05a153jrt37qh2a1jdsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

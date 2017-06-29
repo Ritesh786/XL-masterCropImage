@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Home"
+        android:id="@+id/nav_item_home"
+       />
+
+    <item android:title="Reporter Login"
+        android:id="@+id/nav_item_reporterlogin"
+        />
+
+    <item android:title="Become A Reporter"
+        android:id="@+id/nav_item_becomereporter"
+        />
+
+    <item android:title="Upload News"
+        android:id="@+id/nav_item_uploadnews"
+        />
+
+    <!--<item android:title="@string/hindi"-->
+        <!--android:id="@+id/nav_item_national"-->
+     <!--/>-->
+
+    <!--<item android:title="International"-->
+        <!--android:id="@+id/nav_item_International"-->
+       <!--/>-->
+
+    <!--<item android:title="States"-->
+        <!--android:id="@+id/nav_item_states"-->
+        <!--/>-->
+
+    <!--<item android:title="Business"-->
+        <!--android:id="@+id/nav_item_business"-->
+        <!--/>-->
+
+    <!--<item android:title="Cities"-->
+        <!--android:id="@+id/nav_item_city"-->
+        <!--/>-->
+
+
+
+
+
+</menu>
