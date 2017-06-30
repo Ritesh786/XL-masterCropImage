@@ -11,6 +11,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
         android:layout_marginRight="8dp" />
 
     <!-- Movie Title -->
@@ -32,8 +33,9 @@
         <!--android:layout_marginTop="1dip"-->
         <!--android:layout_toRightOf="@+id/thumbnail"-->
         <!--android:textSize="@dimen/rating" />-->
-
     <!-- Genre -->
+
+
     <TextView
         android:id="@+id/genre"
         android:layout_width="fill_parent"

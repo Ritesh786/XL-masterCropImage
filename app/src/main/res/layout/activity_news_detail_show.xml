@@ -10,22 +10,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/orange">
+        android:background="@color/white">
         <ImageView
             android:id="@+id/back_image"
             android:layout_centerVertical="true"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/back" />
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="EXCEL SAMACHAR"
-            android:gravity="center"
-        android:textSize="20dp"
-            android:textColor="@android:color/black" />
+            android:src="@drawable/leftarrow"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/excellogo"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+          android:layout_marginLeft="130dp"
+            android:src="@drawable/exceldainik" />
 
         <ImageView
             android:id="@+id/share_image"
@@ -34,7 +32,15 @@
             android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/shareone"/>
+            android:src="@drawable/share"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@+id/share_image"
+            android:layout_marginTop="15dp"
+         />
+
 
     </RelativeLayout>
 

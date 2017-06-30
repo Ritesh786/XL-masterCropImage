@@ -3,18 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="#003973"
+    android:background="#ffff"
     android:gravity="center"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@android:color/black"
+        android:layout_marginTop="20dp"
+        />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_height="150dp"
-        android:layout_width="300dp"
-        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_gravity="left"
         android:layout_marginTop="20dp"
-     android:src="@drawable/logofix"/>
+        android:layout_marginLeft="10dp"
+     android:src="@drawable/exceldainik"/>
 
 
 </LinearLayout>

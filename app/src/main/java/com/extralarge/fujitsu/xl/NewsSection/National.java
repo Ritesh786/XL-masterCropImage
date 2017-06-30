@@ -140,7 +140,7 @@ public class National extends Fragment{
                                 movie.setRating(obj.getString("content"));
 
                                 movie.setYear(obj.getString("category"));
-                                movie.setGenre(obj.getString("created_at"));
+                                movie.setGenre(obj.getString("updated_at"));
                                 movie.setId(obj.getString("id"));
 
                                 movieList.add(movie);

@@ -63,7 +63,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
         Movie movie = movieItems.get(position);
 
-        imageLoader.get(movie.getThumbnailUrl(), ImageLoader.getImageListener(holder.thumbNail, R.mipmap.ic_logo, android.R.drawable.ic_dialog_alert));
+        imageLoader.get(movie.getThumbnailUrl(), ImageLoader.getImageListener(holder.thumbNail, R.mipmap.ic_dainik, android.R.drawable.ic_dialog_alert));
 
         holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getGenre());

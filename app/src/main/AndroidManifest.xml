@@ -15,7 +15,7 @@
         android:name=".ReporterSection.AppController"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_logo"
+        android:icon="@mipmap/ic_dainik"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:launchMode="singleTop"

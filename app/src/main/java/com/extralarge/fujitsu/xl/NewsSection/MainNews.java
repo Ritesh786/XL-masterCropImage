@@ -132,7 +132,7 @@ public class MainNews extends Fragment   {
                                 movie.setRating(obj.getString("content"));
 
                                 movie.setYear(obj.getString("category"));
-                                movie.setGenre(obj.getString("created_at"));
+                                movie.setGenre(obj.getString("updated_at"));
 
                                 movieList.add(movie);
 

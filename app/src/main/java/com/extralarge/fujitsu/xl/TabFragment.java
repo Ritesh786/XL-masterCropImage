@@ -103,15 +103,15 @@ public class TabFragment  extends Fragment {
             switch (position){
 
                 case 0 :
-                    return "HOME";
+                    return "मुख्य समाचार";
                 case 1 :
-                    return "NATIONAL";
+                    return "राष्ट्रीय";
                 case 2 :
-                    return "INTERNATIONAL";
+                    return "अंतरराष्ट्रीय";
                 case 3 :
-                    return "STATE";
+                    return "राज्य";
                 case 4 :
-                    return "BUSINESS";
+                    return "व्यापार";
             }
             return null;
         }

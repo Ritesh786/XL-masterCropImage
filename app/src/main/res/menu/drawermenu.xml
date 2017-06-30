@@ -7,15 +7,15 @@
         android:id="@+id/nav_item_home"
        />
 
-    <item android:title="Reporter Login"
+    <item android:title="रिपोर्टर लॉगइन"
         android:id="@+id/nav_item_reporterlogin"
         />
 
-    <item android:title="Become A Reporter"
+    <item android:title="रिपोर्टर बनें"
         android:id="@+id/nav_item_becomereporter"
         />
 
-    <item android:title="Upload News"
+    <item android:title="समाचार अपलोड करें"
         android:id="@+id/nav_item_uploadnews"
         />
 
