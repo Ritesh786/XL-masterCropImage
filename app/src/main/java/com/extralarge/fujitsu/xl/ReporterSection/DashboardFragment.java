@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +42,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.extralarge.fujitsu.xl.MainActivity;
 import com.extralarge.fujitsu.xl.R;
+import com.extralarge.fujitsu.xl.Spinner.MySpinnerAdapter;
+import com.extralarge.fujitsu.xl.Spinner.MySpinnerLight;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +53,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static android.R.attr.bitmap;
@@ -63,7 +69,7 @@ import static com.extralarge.fujitsu.xl.R.id.verifyotp_btn;
 public class DashboardFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
      EditText  mnewsheadline,mnewscontent,mnewsimagecaption;
-     Spinner mnewstype;
+    MaterialBetterSpinner mnewstype;
      Button mchooseimagebtn,muploadnewsbtn;
     ImageView mnewsimage;
     int id;
@@ -78,6 +84,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     Bundle bundle;
     String strtim;
     AlertDialog dialog;
+
 
     public static final String KEY_ID= "user_id";
     public static final String KEY_HHEADLINE = "headline";
@@ -104,7 +111,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
         mnewsheadline = (EditText) view.findViewById(R.id.news_heasdline);
         mnewscontent = (EditText) view.findViewById(R.id.news_content);
         mnewsimagecaption = (EditText) view.findViewById(R.id.news_caption);
-        mnewstype = (Spinner) view.findViewById(R.id.news_type);
+        mnewstype = (MaterialBetterSpinner) view.findViewById(R.id.news_type);
         mnewsimage = (ImageView) view.findViewById(R.id.news_Image);
 
         mchooseimagebtn = (Button) view.findViewById(R.id.chooseimage_btn);
@@ -114,11 +121,25 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
         muploadnewsbtn.setOnClickListener(this);
 
 
-        String newstypr[] = {"","National","International","State","Business","Bollywood","Entertainment"};
+    //    String newstypr[] = {"","National","International","State","Business","Bollywood","Entertainment"};
+
+        List<String> list = new ArrayList();
+        list.add("National");
+        list.add("International");
+        list.add("State");
+        list.add("Business");
+        list.add("Bollywood");
+        list.add("Entertainment");
 
         mnewstype.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.autocomplete,newstypr);
-        mnewstype.setAdapter(adapter);
+        MySpinnerAdapter adapter = new MySpinnerAdapter(getContext(),list);
+          mnewstype.setAdapter(adapter);
+        mnewstype.setTextColor(getResources().getColor(R.color.black));
+        mnewstype.setHintTextColor(getResources().getColor(android.R.color.darker_gray));
+//      ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.autocomplete,newstypr);
+   //     mnewstype.setAdapter(adapter);
+
+
 
         return view;
     }
@@ -168,7 +189,7 @@ try {
             final String userid = String.valueOf(strtext);
             final String headline = mnewsheadline.getText().toString().trim();
             final String content = mnewscontent.getText().toString().trim();
-            final String type = mnewstype.getSelectedItem().toString();
+            final String type = mnewstype.getText().toString().trim();
             final String caption = mnewsimagecaption.getText().toString().trim();
             final String image = getStringImage(bitmap);
 
@@ -198,7 +219,7 @@ try {
                                                       mnewsimagecaption.setText("");
                                                       mnewsheadline.setText("");
                                                       mnewscontent.setText("");
-                                                   //   mnewstype.setAdapter(null);
+                                                      mnewstype.setText("");
                                                       mnewsimage.setImageResource(0);
 //                                PendingNews fragment = new PendingNews();
 //                                FragmentManager manager = getFragmentManager();
@@ -307,7 +328,9 @@ try {
         }
 
         if(v == muploadnewsbtn){
-            uploadImage();
+            if (isvalidinput()) {
+                uploadImage();
+            }
         }
 
     }
@@ -402,10 +425,10 @@ try {
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         if(position < 1){
-            TextView errorText = (TextView)mnewstype.getSelectedView();
-            errorText.setError("");
-            errorText.setTextColor(Color.RED);//just to highlight that this is an error
-            errorText.setText("Choose A News Type");//changes the selected item text to this
+//            TextView errorText = (TextView)mnewstype.getSelectedView();
+//            errorText.setError("");
+//            errorText.setTextColor(Color.RED);//just to highlight that this is an error
+//            errorText.setText("Choose A News Type");//changes the selected item text to this
 
         }
 
@@ -414,6 +437,41 @@ try {
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    private boolean isvalidinput(){
+
+        boolean isValid = true;
+        String headline = mnewsheadline.getText().toString().trim();
+        String content = mnewscontent.getText().toString().trim();
+        String type = mnewstype.getText().toString().trim();
+        String caption = mnewsimagecaption.getText().toString().trim();
+
+
+        if(type.isEmpty()){
+            mnewstype.setError("This Field Is Mandatory");
+            isValid = false;
+        }
+
+        else  if(headline.length() <=0) {
+            mnewsheadline.requestFocus();
+            mnewsheadline.setError("This Field Is Mandatory");
+            isValid = false;
+        }
+
+     else if(content.length() <=0){
+            mnewscontent.requestFocus();
+            mnewscontent.setError("This Field Is Mandatory");
+            isValid = false;
+        }
+        else if(caption.length() <=0){
+
+            mnewsimagecaption.requestFocus();
+            mnewsimagecaption.setError("This Field Is Mandatory");
+            isValid = false;
+        }
+        return isValid;
 
     }
 }
