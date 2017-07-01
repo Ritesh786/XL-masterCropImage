@@ -149,7 +149,6 @@ private void registerUser() {
 
 
         mobile = mmobile.getText().toString().trim();
-
         name = mname.getText().toString().trim();
         email = memail.getText().toString().trim();
         gender = mgender.getText().toString().trim();
@@ -159,9 +158,10 @@ private void registerUser() {
         pincode = mpincode.getText().toString().trim();
 
 
-
-
-         if (TextUtils.isEmpty(password)) {
+            if(TextUtils.isEmpty(name)){
+                    mname.requestFocus();
+                    mname.setError("This Field Is Mandatory");
+           } else if (TextUtils.isEmpty(password)) {
         mpassword.requestFocus();
         mpassword.setError("This Field Is Mandatory");
         } else if (TextUtils.isEmpty(name)) {
